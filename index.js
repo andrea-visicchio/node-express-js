@@ -22,6 +22,19 @@ ci posizioniamo nella cartella di lavoro, tramite terminale, e digitiamo sul pro
 npm install express
 */
 
+// ============ installazione di nodemon =============================
+/* 
+questo pacchetto ci permette di evitare di interrompere e rilanciare il serve node, ogni qualvolta modificahimo il file js di lancio
+
+Per installare il apcchetto, eseguire il seguente comando da terminale:
+
+npm install --save-dev nodemon
+
+l'opzione --save-dev permette di inidcare nel fail packge.json che questo pacchetto viene utilizzato solo in fase di sviluppo, in maniera tale che in caso di trasferimento della app su un altro server o pc, tale pacchetto non venga installato 
+*/
+
+
+
 // carica il modulo express per renderlo disponibile in questo file
 const express = require('express');
 
