@@ -38,6 +38,7 @@ l'opzione --save-dev permette di inidcare nel fail packge.json che questo pacche
 // carica il modulo express per renderlo disponibile in questo file
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 // creaimo un oggetto chaimato app che recepisce tutti i metodi e le prorpiet di express
 const app = express();
@@ -74,6 +75,27 @@ app.set('view engine', 'ejs');
 
 let arr = ['Pippo', 'Topolino', 'Paperino', 'Pluto'];
 
+
+// ============= Gestioen del caricamento del file JSON ===========================
+
+let dati = [];
+
+fs.readFile('./dati/1mb.json', 'utf-8', (errore, file_letto) => {
+
+     if (errore) {
+          console.log("Errore nel caricamento del file json");
+          
+     } else {
+
+          dati = JSON.parse(file_letto);
+
+     }
+
+});
+
+
+// =============================================================================
+
 app.get('/', (richiesta, risposta) => {
 
      // il metodo render, che appartiene al Express, può, oltre a indicare il nome del file da inviare al browser rispetto alla rotta, inviare delle variabili che possono essere definite in questo (index.js)
@@ -83,7 +105,7 @@ app.get('/', (richiesta, risposta) => {
 
 app.get('/prodotti', (richiesta, risposta) => {
 
-     risposta.render('prodotti.ejs', {personaggi : arr})
+     risposta.render('prodotti.ejs', {personaggi : arr, elenco_contatti : dati})
 })
 
 app.get('/i-nostri-servizi', (richiesta, risposta) => {
