@@ -8,11 +8,33 @@
   </head>
   <body>
 
+    <div class="container-md">
 
-    <h1>Home page</h1>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae asperiores quas corporis unde minima libero? Nisi, porro dolorem vel, a necessitatibus tempore accusantium at animi ullam, amet architecto iure laboriosam cum quaerat. In, est expedita consequuntur quibusdam quam omnis, debitis suscipit voluptates facilis deserunt cum aut temporibus ad nulla quis fuga nobis, vitae optio aliquid libero officiis. Illo velit excepturi et vel repudiandae amet numquam dolorum. At exercitationem excepturi soluta culpa similique maiores. Obcaecati perferendis totam itaque alias fugiat illum. Delectus, voluptates ipsa. Officiis, sit aperiam placeat a modi natus?
-    </p>
+        <!-- 
+        la seguente riga contiene un contenuto dinamico il quale deve essere inserito tra i seguenti "simboli"
+
+
+
+        questa sintassi la usiamo perchè all'interno della nostra app, facciamo uso del motore di templating EJS
+
+        all'interno di tali "simboli", possiamo scrivere puro codice Javascript
+
+        -->
+        <%- include('./pattern/header.ejs') %>
+
+        <main>
+            <h1>Home page</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda soluta neque necessitatibus ipsa pariatur harum natus repellendus asperiores, fugiat sit repudiandae eligendi non totam quo maiores autem rem dolor nemo tempore iure aut quos expedita? Sapiente fugiat labore eius mollitia vel repellat, laboriosam voluptatem consequatur quas necessitatibus magnam quaerat harum libero autem eum modi nihil quo exercitationem, corporis molestias. In corporis, sunt sint fugiat quos veniam blanditiis voluptate odit alias. Repellendus temporibus similique laudantium magnam libero pariatur quisquam molestias, facilis, vel porro cupiditate rerum aspernatur voluptates repudiandae aut, iste aliquid.
+            </p>
+        </main>
+
+
+
+    </div>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
