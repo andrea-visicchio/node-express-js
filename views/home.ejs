@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/stile.css">
   </head>
   <body>
 
@@ -24,6 +26,20 @@
 
         <main>
             <h1>Home page</h1>
+
+            <h2>  <%= nome %>  </h2>
+
+            <h3><%= cognome %> </h3>
+
+            <% 
+              for (let i = 0; i < 10; i++) { 
+            %>
+
+              <p>lorem ipsum</p>
+            
+            <% 
+              } 
+            %>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda soluta neque necessitatibus ipsa pariatur harum natus repellendus asperiores, fugiat sit repudiandae eligendi non totam quo maiores autem rem dolor nemo tempore iure aut quos expedita? Sapiente fugiat labore eius mollitia vel repellat, laboriosam voluptatem consequatur quas necessitatibus magnam quaerat harum libero autem eum modi nihil quo exercitationem, corporis molestias. In corporis, sunt sint fugiat quos veniam blanditiis voluptate odit alias. Repellendus temporibus similique laudantium magnam libero pariatur quisquam molestias, facilis, vel porro cupiditate rerum aspernatur voluptates repudiandae aut, iste aliquid.
             </p>

@@ -49,9 +49,19 @@ le buone pratiche ci consigliano di nominare la cartella che deve contenere riso
 
 // imposta la cartella per i file statici, tutti i file presenti, anche quelli che si troveranno all'itnerno di eventuali sottocartelle, verrano considerati da expressJS come risorse statiche
 
-// app.use(  express.static('public')  );
+app.use(  express.static('public')  );
 
 // ============= implementazione del codice per usare il templeting EJS ============================
+
+/* 
+per installare ejs, inserire nel termianle, posizionandoci nella cartella di lavoro:
+
+ejs = embedded Javascript
+
+npm install ejs
+
+
+*/
 
 // il metodo set() serve a configurare le funzionalità di Express JS e node, la riga seguente indica a Express quale sarà il percorso assoluto della cartella che conterrà i file dinamici
 app.set('views', path.join(__dirname, 'views'));
@@ -62,14 +72,18 @@ app.set('view engine', 'ejs');
 
 // ==============================
 
+let arr = ['Pippo', 'Topolino', 'Paperino', 'Pluto'];
+
 app.get('/', (richiesta, risposta) => {
 
-     risposta.render('home.ejs')
+     // il metodo render, che appartiene al Express, può, oltre a indicare il nome del file da inviare al browser rispetto alla rotta, inviare delle variabili che possono essere definite in questo (index.js)
+     risposta.render('home.ejs', {nome : 'Andrea', cognome: 'Visicchio'})
 
 });
 
 app.get('/prodotti', (richiesta, risposta) => {
-     risposta.render('prodotti.ejs')
+
+     risposta.render('prodotti.ejs', {personaggi : arr})
 })
 
 app.get('/i-nostri-servizi', (richiesta, risposta) => {

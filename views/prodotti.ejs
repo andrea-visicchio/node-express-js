@@ -13,9 +13,35 @@
         
         <main>
           <h1>Prodotti</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum incidunt minima modi. Dolore aliquam modi, doloribus quo ipsum molestias similique. Officiis delectus officia vero, at odio consequuntur natus! Ratione!
-    </p>
+
+          <ul>
+
+            <% for (let i = 0; i < personaggi.length; i++) {  %>
+
+              <li><%=  personaggi[i]  %></li>
+
+            <% } %>
+          </ul>
+
+          <ul>
+
+            <%   
+              
+                personaggi.forEach( (personaggio) => { 
+            
+            %>
+
+                  <li><%=  personaggio  %></li>
+            
+            <%
+                }   );     
+            %>
+
+          </ul>
+
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum incidunt minima modi. Dolore aliquam modi, doloribus quo ipsum molestias similique. Officiis delectus officia vero, at odio consequuntur natus! Ratione!
+          </p>
         </main>
 
         <%- include('./pattern/footer.ejs') %>
