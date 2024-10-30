@@ -76,7 +76,7 @@ app.set('view engine', 'ejs');
 let arr = ['Pippo', 'Topolino', 'Paperino', 'Pluto'];
 
 
-// ============= Gestioen del caricamento del file JSON ===========================
+// ============= Gestione del caricamento del file JSON ===========================
 
 let dati = [];
 
@@ -106,6 +106,10 @@ app.get('/', (richiesta, risposta) => {
 app.get('/prodotti', (richiesta, risposta) => {
 
      risposta.render('prodotti.ejs', {personaggi : arr, elenco_contatti : dati})
+
+     console.log(  typeof(dati));
+     
+
 })
 
 app.get('/i-nostri-servizi', (richiesta, risposta) => {

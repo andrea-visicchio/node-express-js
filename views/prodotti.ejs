@@ -39,9 +39,46 @@
 
           </ul>
 
+          <table class="table table-striped">
+            <thead>
+              <tr>
+
+                <th scope="col">Nominativo</th>
+                <th scope="col">Indirizzo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% 
+                elenco_contatti.forEach( (contatto) => {
+              %>
+                  <!-- 
+              tutto ciò che scriverò in questa possizione, ovvero le operazioni che verranno eseguite dalla funzione di call back, verrà ripetuto tante volte quanti sono gli elementi dell'array in cui forEach itera 
+              -->
+
+                  <tr>
+
+                    <td> 
+                      <%= contatto.name %>
+                    </td>
+                    <td>
+                      <%= contatto.address %>
+                    </td>
+
+                  </tr>
+                  
+              <%
+                } )
+              %>
+
+
+            </tbody>
+          </table>
+
           <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum incidunt minima modi. Dolore aliquam modi, doloribus quo ipsum molestias similique. Officiis delectus officia vero, at odio consequuntur natus! Ratione!
           </p>
+          
+
         </main>
 
         <%- include('./pattern/footer.ejs') %>
