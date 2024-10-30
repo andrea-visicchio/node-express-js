@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/stile.css">
   </head>
   <body>
 
@@ -34,31 +36,39 @@
                   <li><%=  personaggio  %></li>
             
             <%
-                }   );     
+                });     
             %>
 
           </ul>
 
-          <table class="table table-striped">
+          <button id="bottone_cambia_stile" class="btn btn-danger">Cambia stile alla tabella</button>
+
+          <table id="tabella_contatti" class="table table-striped">
             <thead>
               <tr>
-
+                <th>Indice</th>
                 <th scope="col">Nominativo</th>
                 <th scope="col">Indirizzo</th>
               </tr>
             </thead>
             <tbody>
               <% 
-                elenco_contatti.forEach( (contatto) => {
+                elenco_contatti.forEach( (contatto, indice) => {
               %>
                   <!-- 
               tutto ciò che scriverò in questa possizione, ovvero le operazioni che verranno eseguite dalla funzione di call back, verrà ripetuto tante volte quanti sono gli elementi dell'array in cui forEach itera 
               -->
 
                   <tr>
-
+                    <td>
+                      <%= indice %>
+                    </td>
                     <td> 
-                      <%= contatto.name %>
+
+                      <a href="/scheda-contatto/<%= indice %>">
+                        <%= contatto.name %>
+                      </a>
+
                     </td>
                     <td>
                       <%= contatto.address %>
@@ -86,5 +96,7 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="/js/main.js"></script>
   </body>
 </html>

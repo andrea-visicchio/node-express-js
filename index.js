@@ -103,12 +103,33 @@ app.get('/', (richiesta, risposta) => {
 
 });
 
+// rotta per la scheda contatto
+app.get('/scheda-contatto/:id', (richiesta, risposta) => {
+
+     // tramite l'oggetto richiesta, accedo all'oggetto params, il qule contiene la proprietà id, che avrà un valore diverso a seconda del link che l'untente avrà scelto
+     /* 
+          http://localhost:3000/scheda-contatto/2
+          
+     */
+     const id = parseInt(   richiesta.params.id   );
+
+     const contatto = dati.find(  (elemento, indice) => {
+
+               if (  indice == id  ) {
+                    return elemento;
+               }
+
+          } // end funzione di call back
+     ); // end metodo find
+
+
+     risposta.render('contatto.ejs', {dati_contatto : contatto});
+
+})
+
 app.get('/prodotti', (richiesta, risposta) => {
 
      risposta.render('prodotti.ejs', {personaggi : arr, elenco_contatti : dati})
-
-     console.log(  typeof(dati));
-     
 
 })
 
